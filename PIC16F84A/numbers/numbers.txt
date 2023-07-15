@@ -1,0 +1,65 @@
+Este código en ensamblador está escrito para el microcontrolador PIC 16F84A y utiliza los botones RA0 y RA1
+para implementar un contador decimal de 0 a 9. A continuación, se explica paso a paso el funcionamiento del código:
+
+- `CBLOCK 0X0C` y `counter`: Aquí se reserva un bloque de memoria llamado `counter` para almacenar 
+el valor actual del contador.
+
+- `ORG 0`: Establece el inicio del programa en la dirección de memoria 0.
+
+- `bsf STATUS,RP0`: Establece el bit RP0 del registro STATUS en 1, cambiando al banco de registros 1.
+
+- `movlw 0x00`: Carga el valor 0x00 en el registro W.
+
+- `movwf TRISB`: Mueve el contenido del registro W al registro TRISB, configurando el puerto B como salidas.
+
+- `bsf TRISA,RA0`: Establece el bit RA0 del registro TRISA en 1, configurando RA0 como entrada.
+
+- `bcf STATUS,RP0`: Establece el bit RP0 del registro STATUS en 0, volviendo al banco de registros 0.
+
+- `clrf loop`: Limpia el contenido de la etiqueta `loop` para su posterior uso.
+
+- `clrf PORTB`: Limpia el puerto B, estableciendo todos los pines en nivel bajo.
+
+- `loop`: Etiqueta de inicio del bucle principal.
+
+- `pul1`: Espera a que se presione el botón RA0 (espera a que el bit RA0 de PORTA sea 0).
+
+- `btfsc PORTA,RA0`: Salta si el bit RA0 de PORTA está en nivel bajo (0). Si el botón RA0 está presionado, el programa continúa.
+
+- `goto pul1`: Vuelve a la etiqueta `pul1` para esperar a que el botón RA0 sea presionado y liberado.
+
+- `pul2`: Espera a que se suelte el botón RA0 (espera a que el bit RA0 de PORTA sea 1).
+
+- `btfss PORTA,RA0`: Salta si el bit RA0 de PORTA está en nivel alto (1). Si el botón RA0 está suelto, el programa continúa.
+
+- `goto pul2`: Vuelve a la etiqueta `pul2` para esperar a que el botón RA0 sea liberado.
+
+- `btfss PORTA,RA1`: Salta si el bit RA1 de PORTA está en nivel bajo (0). Si el botón RA1 está presionado, el programa vuelve a esperar a que el botón RA0 sea presionado y liberado.
+
+- `movf counter,W`: Mueve el valor del contador a W.
+
+- `call TABLA`: Llama a la subrutina `TABLA` para convertir el valor del contador en segmentos para mostrarlo en el puerto B.
+
+- `movwf PORTB`: Mueve el contenido de W al puerto B, mostrando el dígito en los segmentos correspondientes.
+
+- `incf counter,F`: Incrementa el valor del contador en 1.
+
+- `movlw .10`: Carga el valor 10 en el registro W.
+
+- `subwf counter,W`: Resta el valor del contador a 10 y guarda el resultado en W.
+
+- `btfsc STATUS,Z`: Salta si el resultado de la
+
+operación anterior es cero (si el contador alcanzó el valor 10).
+
+- `clrf counter`: Limpia el contador, estableciéndolo en cero si alcanzó el valor 10.
+
+- `goto loop`: Salta de nuevo a la etiqueta `loop` para reiniciar el bucle y esperar a que se presione el botón RA0 nuevamente.
+
+- `TABLA`: Etiqueta de la subrutina que convierte el valor del contador en segmentos para mostrarlo en el puerto B.
+
+- `addwf PCL,F`: Suma el contenido de W al registro PCL (program counter low), realizando un salto a la dirección de memoria correspondiente al valor del contador.
+
+- `DT 0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x67`: Datos de la tabla de segmentos. Cada número del 0 al 9 tiene un valor hexadecimal correspondiente para mostrarlo en los segmentos.
+
+El código utiliza una estructura de bucle infinito que espera a que se presione el botón RA0, incrementa el contador, muestra el dígito en el puerto B y verifica si el contador alcanzó el valor 10. Si el contador llega a 10, se reinicia a cero. Este proceso se repite continuamente.

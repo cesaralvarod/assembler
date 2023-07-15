@@ -1,0 +1,6 @@
+Warning[205] D:\COLLEGE\MICROCONTROLADORES\PIC16F84A\NUMBERS\NUMBERS.ASM 1 : Found directive in column 1. (LIST)
+Warning[205] D:\COLLEGE\MICROCONTROLADORES\PIC16F84A\NUMBERS\NUMBERS.ASM 2 : Found directive in column 1. (INCLUDE)
+Message[302] D:\COLLEGE\MICROCONTROLADORES\PIC16F84A\NUMBERS\NUMBERS.ASM 9 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\COLLEGE\MICROCONTROLADORES\PIC16F84A\NUMBERS\NUMBERS.ASM 10 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[219] D:\COLLEGE\MICROCONTROLADORES\PIC16F84A\NUMBERS\NUMBERS.ASM 12 : Invalid RAM location specified.
+Warning[205] D:\COLLEGE\MICROCONTROLADORES\PIC16F84A\NUMBERS\NUMBERS.ASM 36 : Found directive in column 1. (END)

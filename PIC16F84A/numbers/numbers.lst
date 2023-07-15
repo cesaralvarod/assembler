@@ -1,0 +1,206 @@
+MPASM  5.51                       NUMBERS.ASM   7-7-2023  17:45:02         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[205]: Found directive in column 1. (LIST)
+                      00001 LIST P=16F84A
+Warning[205]: Found directive in column 1. (INCLUDE)
+                      00002 INCLUDE <P16F84A.inc>
+                      00001         LIST
+                      00002 
+                      00003 ;==========================================================================
+                      00004 ;  MPASM PIC16F84A processor include
+                      00005 ; 
+                      00006 ;  (c) Copyright 1999-2013 Microchip Technology, All rights reserved
+                      00007 ;==========================================================================
+                      00008 
+                      00208         LIST
+                      00003         CBLOCK 0X0C; almacena counter
+  0000000C            00004         counter; bloque de memoria para almacenar el valor actual del contador
+                      00005         ENDC
+0000                  00006                 ORG 0; inicio del programa en direccion de memoria 0
+0000   1683           00007                 bsf STATUS,RP0; cambia al banco 1
+0001   3000           00008                 movlw 0x00; carga el valor de 0x00 en el registro de trabajo (W)s
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0002   0086           00009                 movwf TRISB; mueve contenido de W a TRISB, configurando PORTB como salidas
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0003   1405           00010                 bsf       TRISA,RA0; set RA0 en STATUS en 0, configurando RA0 como entrada
+0004   1283           00011                 bcf   STATUS,RP0; establece RP0 de STATUS en 0, volviendo al banco de registros 0
+Warning[219]: Invalid RAM location specified.
+0005   0187           00012                 clrf  loop; limpia etiqueta loop para su posterior uso
+0006   0186           00013                 clrf  PORTB; limpia puerto B, establece todos los pines en 0 o nivel bajo
+                      00014 ; etiqueta del bucle principal
+0007                  00015 loop
+                      00016 ; espera que se presione RA0 (espera que RA0 del PORTA sea 0)
+0007                  00017 pul1
+0007   1805           00018         btfsc   PORTA,RA0; salta linea si RA0 es 0. Si RA0 es presionado, el programa continua a la sigu
+                            iente etiqueta
+0008   2807           00019         goto    pul1; vuelve a la etiqueta pul1 para esperar que RA0 sea presionado y liberado
+                      00020 ; espera que se suelte RA0 (espera que RA0 de PORTA sea 1)
+0009                  00021 pul2
+0009   1C05           00022         btfss   PORTA,RA0; salta linea si RA0 de PORTA es 1 . Si RA0 esta suelto (0), el programa contin
+                            ua
+000A   2809           00023         goto    pul2; vuelve a la etiqueta pul2 para esperar que RA0 sea liberado (0)
+000B   080C           00024         movf    counter,W; mueve contenido de counter a W
+000C   2014           00025         call    TABLE; llama a la subrutina TABLE para convertir el valor de counter en segmentos para m
+                            ostrarlo en el PORTB
+000D   0086           00026         movwf   PORTB; mueve el contenido de W a PORTB
+000E   0A8C           00027         incf    counter,F; incrementa el valor de counter en 1
+000F   300A           00028         movlw   .10; carga el valor de 10 en el registro W
+0010   020C           00029         subwf   counter,W; resta el valor de counter a 10 y guarda el resultado en W
+0011   1903           00030         btfsc   STATUS,Z; salta si el resultado de la operacion anterior es cero (si counter alcanzo el 
+                            valor de 10)
+0012   018C           00031         clrf    counter; limpia counter, lo establece en 0 si el valor alcanzo 0
+0013   2807           00032         goto    loop; salta a loop para reiniciar el bucle y esperar que el RA0 se presione
+0014                  00033 TABLE
+0014   0782           00034         addwf   PCL,F; suma el contenido de W al registro PCL (program counter low), realizando un salto
+                             a la direccion de memoria correspondiente para mostrarlo en los segmentos.
+MPASM  5.51                       NUMBERS.ASM   7-7-2023  17:45:02         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0015   343F 3406 345B 00035         DT              0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x67; datos de la tabla de segmento
+                            . Cada numero del 1 al 9 tiene un valor hexadecimal correspondiente para mostrarlo en los segmen
+       344F 3466 346D 
+       347D 3407 347F 
+       3467 
+Warning[205]: Found directive in column 1. (END)
+                      00036 END
+MPASM  5.51                       NUMBERS.ASM   7-7-2023  17:45:02         PAGE  3
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+C                                 00000000
+DC                                00000001
+EEADR                             00000009
+EECON1                            00000088
+EECON2                            00000089
+EEDATA                            00000008
+EEIE                              00000006
+EEIF                              00000004
+F                                 00000001
+FSR                               00000004
+GIE                               00000007
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+NOT_PD                            00000003
+NOT_RBPU                          00000007
+NOT_TO                            00000004
+OPTION_REG                        00000081
+PCL                               00000002
+PCLATH                            0000000A
+PORTA                             00000005
+PORTB                             00000006
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+RA0                               00000000
+RA1                               00000001
+RA2                               00000002
+RA3                               00000003
+RA4                               00000004
+RB0                               00000000
+RB1                               00000001
+RB2                               00000002
+RB3                               00000003
+RB4                               00000004
+RB5                               00000005
+RB6                               00000006
+RB7                               00000007
+RBIE                              00000003
+RBIF                              00000000
+RD                                00000000
+RP0                               00000005
+RP1                               00000006
+STATUS                            00000003
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+TABLE                             00000014
+MPASM  5.51                       NUMBERS.ASM   7-7-2023  17:45:02         PAGE  4
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TMR0                              00000001
+TMR0IE                            00000005
+TMR0IF                            00000002
+TRISA                             00000085
+TRISA0                            00000000
+TRISA1                            00000001
+TRISA2                            00000002
+TRISA3                            00000003
+TRISA4                            00000004
+TRISB                             00000086
+TRISB0                            00000000
+TRISB1                            00000001
+TRISB2                            00000002
+TRISB3                            00000003
+TRISB4                            00000004
+TRISB5                            00000005
+TRISB6                            00000006
+TRISB7                            00000007
+W                                 00000000
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+Z                                 00000002
+_CONFIG                           00002007
+_CP_OFF                           00003FFF
+_CP_ON                            0000000F
+_DEVID1                           00002006
+_FOSC_EXTRC                       00003FFF
+_FOSC_HS                          00003FFE
+_FOSC_LP                          00003FFC
+_FOSC_XT                          00003FFD
+_HS_OSC                           00003FFE
+_IDLOC0                           00002000
+_IDLOC1                           00002001
+_IDLOC2                           00002002
+_IDLOC3                           00002003
+_LP_OSC                           00003FFC
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+_WDTE_OFF                         00003FFB
+_WDTE_ON                          00003FFF
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_XT_OSC                           00003FFD
+__16F84A                          00000001
+counter                           0000000C
+loop                              00000007
+pul1                              00000007
+pul2                              00000009
+MPASM  5.51                       NUMBERS.ASM   7-7-2023  17:45:02         PAGE  5
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+
+0000 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXX- ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:    31
+Program Memory Words Free:   993
+
+
+Errors   :     0
+Warnings :     4 reported,     0 suppressed
+Messages :     2 reported,     0 suppressed
+
+

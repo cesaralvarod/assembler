@@ -1,0 +1,4 @@
+Warning[205] D:\MICROCONTROLADORES\FIRST_PROGRAM.ASM 1 : Found directive in column 1. (list)
+Message[302] D:\MICROCONTROLADORES\FIRST_PROGRAM.ASM 6 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\MICROCONTROLADORES\FIRST_PROGRAM.ASM 8 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[205] D:\MICROCONTROLADORES\FIRST_PROGRAM.ASM 23 : Found directive in column 1. (END)

@@ -1,0 +1,8 @@
+Warning[205] D:\COLLEGE\MICROCONTROLADORES\PIC16F84A\PRENDER_LED\MAIN.ASM 2 : Found directive in column 1. (list)
+Warning[205] D:\COLLEGE\MICROCONTROLADORES\PIC16F84A\PRENDER_LED\MAIN.ASM 3 : Found directive in column 1. (include)
+Warning[205] D:\COLLEGE\MICROCONTROLADORES\PIC16F84A\PRENDER_LED\MAIN.ASM 5 : Found directive in column 1. (org)
+Warning[203] D:\COLLEGE\MICROCONTROLADORES\PIC16F84A\PRENDER_LED\MAIN.ASM 7 : Found opcode in column 1. (bsf)
+Warning[203] D:\COLLEGE\MICROCONTROLADORES\PIC16F84A\PRENDER_LED\MAIN.ASM 8 : Found opcode in column 1. (bcf)
+Message[302] D:\COLLEGE\MICROCONTROLADORES\PIC16F84A\PRENDER_LED\MAIN.ASM 8 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[203] D:\COLLEGE\MICROCONTROLADORES\PIC16F84A\PRENDER_LED\MAIN.ASM 9 : Found opcode in column 1. (bcf)
+Warning[205] D:\COLLEGE\MICROCONTROLADORES\PIC16F84A\PRENDER_LED\MAIN.ASM 14 : Found directive in column 1. (end)

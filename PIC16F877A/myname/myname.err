@@ -1,0 +1,5 @@
+Warning[205] D:\COLLEGE\MICROCONTROLADORES\PIC16F877A\MYNAME\MYNAME.ASM 1 : Found directive in column 1. (list)
+Warning[205] D:\COLLEGE\MICROCONTROLADORES\PIC16F877A\MYNAME\MYNAME.ASM 2 : Found directive in column 1. (include)
+Message[302] D:\COLLEGE\MICROCONTROLADORES\PIC16F877A\MYNAME\MYNAME.ASM 16 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\COLLEGE\MICROCONTROLADORES\PIC16F877A\MYNAME\MYNAME.ASM 17 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[205] D:\COLLEGE\MICROCONTROLADORES\PIC16F877A\MYNAME\MYNAME.ASM 146 : Found directive in column 1. (END)
