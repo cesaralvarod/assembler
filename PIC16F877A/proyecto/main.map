@@ -1,0 +1,54 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Wed Jul 26 17:24:19 2023
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x00009c
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x00004d      
+            78 out of 8454 program addresses used, program memory utilization is 0%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+             BIN2_DISPLAY   0x00002e    program     static D:\College\Microcontroladores\assembler\PIC16F877A\proyecto\main.asm
+                 BIT8_CDU   0x000039    program     static D:\College\Microcontroladores\assembler\PIC16F877A\proyecto\convertir.inc
+        DATO_MAY_IGUAL_10   0x000044    program     static D:\College\Microcontroladores\assembler\PIC16F877A\proyecto\convertir.inc
+            DATO_MENOR_10   0x000041    program     static D:\College\Microcontroladores\assembler\PIC16F877A\proyecto\convertir.inc
+               DELAY_LOOP   0x000028    program     static D:\College\Microcontroladores\assembler\PIC16F877A\proyecto\main.asm
+                 DELAY_MS   0x000026    program     static D:\College\Microcontroladores\assembler\PIC16F877A\proyecto\main.asm
+   EVAL_DATO_MAY_IGUAL_10   0x00003c    program     static D:\College\Microcontroladores\assembler\PIC16F877A\proyecto\convertir.inc
+                INCREMENT   0x000020    program     static D:\College\Microcontroladores\assembler\PIC16F877A\proyecto\main.asm
+                     MAIN   0x000001    program     static D:\College\Microcontroladores\assembler\PIC16F877A\proyecto\main.asm
+       NUMBER_IS_NOT_ZERO   0x00003c    program     static D:\College\Microcontroladores\assembler\PIC16F877A\proyecto\convertir.inc
+              RESET_DELAY   0x00002b    program     static D:\College\Microcontroladores\assembler\PIC16F877A\proyecto\main.asm
+                    START   0x000011    program     static D:\College\Microcontroladores\assembler\PIC16F877A\proyecto\main.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     MAIN   0x000001    program     static D:\College\Microcontroladores\assembler\PIC16F877A\proyecto\main.asm
+                    START   0x000011    program     static D:\College\Microcontroladores\assembler\PIC16F877A\proyecto\main.asm
+                INCREMENT   0x000020    program     static D:\College\Microcontroladores\assembler\PIC16F877A\proyecto\main.asm
+                 DELAY_MS   0x000026    program     static D:\College\Microcontroladores\assembler\PIC16F877A\proyecto\main.asm
+               DELAY_LOOP   0x000028    program     static D:\College\Microcontroladores\assembler\PIC16F877A\proyecto\main.asm
+              RESET_DELAY   0x00002b    program     static D:\College\Microcontroladores\assembler\PIC16F877A\proyecto\main.asm
+             BIN2_DISPLAY   0x00002e    program     static D:\College\Microcontroladores\assembler\PIC16F877A\proyecto\main.asm
+                 BIT8_CDU   0x000039    program     static D:\College\Microcontroladores\assembler\PIC16F877A\proyecto\convertir.inc
+   EVAL_DATO_MAY_IGUAL_10   0x00003c    program     static D:\College\Microcontroladores\assembler\PIC16F877A\proyecto\convertir.inc
+       NUMBER_IS_NOT_ZERO   0x00003c    program     static D:\College\Microcontroladores\assembler\PIC16F877A\proyecto\convertir.inc
+            DATO_MENOR_10   0x000041    program     static D:\College\Microcontroladores\assembler\PIC16F877A\proyecto\convertir.inc
+        DATO_MAY_IGUAL_10   0x000044    program     static D:\College\Microcontroladores\assembler\PIC16F877A\proyecto\convertir.inc
+
+

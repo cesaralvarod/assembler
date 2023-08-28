@@ -1,0 +1,42 @@
+MPLINK 4.49, Linker
+Linker Map File - Created Wed Jul 19 17:54:30 2023
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x00004a
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000024      
+            37 out of 1094 program addresses used, program memory utilization is 3%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    TABLE   0x000012    program     static D:\College\Microcontroladores\assembler\PIC16F84A\practica2\pc2.asm
+                    delay   0x00001c    program     static D:\College\Microcontroladores\assembler\PIC16F84A\practica2\pc2.asm
+                     loop   0x00000c    program     static D:\College\Microcontroladores\assembler\PIC16F84A\practica2\pc2.asm
+                    loop2   0x00001e    program     static D:\College\Microcontroladores\assembler\PIC16F84A\practica2\pc2.asm
+                    loop3   0x000020    program     static D:\College\Microcontroladores\assembler\PIC16F84A\practica2\pc2.asm
+                     main   0x000009    program     static D:\College\Microcontroladores\assembler\PIC16F84A\practica2\pc2.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                     main   0x000009    program     static D:\College\Microcontroladores\assembler\PIC16F84A\practica2\pc2.asm
+                     loop   0x00000c    program     static D:\College\Microcontroladores\assembler\PIC16F84A\practica2\pc2.asm
+                    TABLE   0x000012    program     static D:\College\Microcontroladores\assembler\PIC16F84A\practica2\pc2.asm
+                    delay   0x00001c    program     static D:\College\Microcontroladores\assembler\PIC16F84A\practica2\pc2.asm
+                    loop2   0x00001e    program     static D:\College\Microcontroladores\assembler\PIC16F84A\practica2\pc2.asm
+                    loop3   0x000020    program     static D:\College\Microcontroladores\assembler\PIC16F84A\practica2\pc2.asm
+
+

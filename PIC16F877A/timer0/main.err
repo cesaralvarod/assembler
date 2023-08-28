@@ -1,0 +1,16 @@
+Warning[205] D:\COLLEGE\MICROCONTROLADORES\ASSEMBLER\PIC16F877A\TIMER0\MAIN.ASM 1 : Found directive in column 1. (list)
+Warning[205] D:\COLLEGE\MICROCONTROLADORES\ASSEMBLER\PIC16F877A\TIMER0\MAIN.ASM 2 : Found directive in column 1. (include)
+Warning[205] D:\COLLEGE\MICROCONTROLADORES\ASSEMBLER\PIC16F877A\TIMER0\MAIN.ASM 6 : Found directive in column 1. (cblock)
+Warning[205] D:\COLLEGE\MICROCONTROLADORES\ASSEMBLER\PIC16F877A\TIMER0\MAIN.ASM 8 : Found directive in column 1. (ENDC)
+Warning[205] D:\COLLEGE\MICROCONTROLADORES\ASSEMBLER\PIC16F877A\TIMER0\MAIN.ASM 16 : Found directive in column 1. (org)
+Warning[203] D:\COLLEGE\MICROCONTROLADORES\ASSEMBLER\PIC16F877A\TIMER0\MAIN.ASM 17 : Found opcode in column 1. (goto)
+Warning[205] D:\COLLEGE\MICROCONTROLADORES\ASSEMBLER\PIC16F877A\TIMER0\MAIN.ASM 19 : Found directive in column 1. (org)
+Warning[203] D:\COLLEGE\MICROCONTROLADORES\ASSEMBLER\PIC16F877A\TIMER0\MAIN.ASM 20 : Found opcode in column 1. (goto)
+Message[302] D:\COLLEGE\MICROCONTROLADORES\ASSEMBLER\PIC16F877A\TIMER0\MAIN.ASM 28 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\COLLEGE\MICROCONTROLADORES\ASSEMBLER\PIC16F877A\TIMER0\MAIN.ASM 29 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\COLLEGE\MICROCONTROLADORES\ASSEMBLER\PIC16F877A\TIMER0\MAIN.ASM 30 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\COLLEGE\MICROCONTROLADORES\ASSEMBLER\PIC16F877A\TIMER0\MAIN.ASM 32 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\COLLEGE\MICROCONTROLADORES\ASSEMBLER\PIC16F877A\TIMER0\MAIN.ASM 33 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\COLLEGE\MICROCONTROLADORES\ASSEMBLER\PIC16F877A\TIMER0\MAIN.ASM 34 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] D:\COLLEGE\MICROCONTROLADORES\ASSEMBLER\PIC16F877A\TIMER0\MAIN.ASM 37 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Warning[205] D:\COLLEGE\MICROCONTROLADORES\ASSEMBLER\PIC16F877A\TIMER0\MAIN.ASM 68 : Found directive in column 1. (end)

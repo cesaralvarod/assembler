@@ -1,0 +1,243 @@
+MPASM  5.51                           PC2.ASM   7-19-2023  17:54:29         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Warning[205]: Found directive in column 1. (list)
+                      00001 list P=16F84A
+Warning[205]: Found directive in column 1. (include)
+                      00002 include <P16F84A.inc>
+                      00001         LIST
+                      00002 
+                      00003 ;==========================================================================
+                      00004 ;  MPASM PIC16F84A processor include
+                      00005 ; 
+                      00006 ;  (c) Copyright 1999-2013 Microchip Technology, All rights reserved
+                      00007 ;==========================================================================
+                      00008 
+                      00208         LIST
+                      00003 
+Warning[205]: Found directive in column 1. (cblock)
+                      00004 cblock 0x0c
+  0000000C            00005         counter;
+  0000000D            00006         val1;
+  0000000E            00007         val2;
+Warning[205]: Found directive in column 1. (ENDC)
+                      00008 endc
+                      00009 
+Warning[205]: Found directive in column 1. (org)
+0000                  00010 org 0;
+                      00011 
+Warning[203]: Found opcode in column 1. (bsf)
+0000   1683           00012 bsf STATUS, RP0; banco 1
+                      00013 
+Warning[203]: Found opcode in column 1. (bsf)
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0001   1405           00014 bsf TRISA, 0; RA0 como entrada
+                      00015 
+Warning[203]: Found opcode in column 1. (movlw)
+0002   3000           00016 movlw b'00000000'; RB0-RB7 como salida
+Warning[203]: Found opcode in column 1. (movwf)
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0003   0086           00017 movwf TRISB
+                      00018 
+Warning[203]: Found opcode in column 1. (bcf)
+0004   1283           00019 bcf STATUS, RP0; banco 0
+                      00020 
+                      00021 ; limpiamo
+Warning[203]: Found opcode in column 1. (clrf)
+0005   0186           00022 clrf PORTB
+Warning[203]: Found opcode in column 1. (clrf)
+0006   018C           00023 clrf counter
+Warning[203]: Found opcode in column 1. (clrf)
+0007   018D           00024 clrf val1
+Warning[203]: Found opcode in column 1. (clrf)
+0008   018E           00025 clrf val2
+                      00026 
+0009                  00027 main:
+0009   1C05           00028         btfss PORTA, 0
+MPASM  5.51                           PC2.ASM   7-19-2023  17:54:29         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+000A   2809           00029         goto main
+000B   280C           00030         goto loop
+                      00031 
+000C                  00032 loop:
+000C   2012           00033         call TABLE
+000D   0086           00034         movwf PORTB
+000E   0A0C           00035         incf counter, W
+000F   008C           00036         movwf counter
+0010   201C           00037         call delay
+0011   280C           00038         goto loop
+                      00039 
+0012                  00040 TABLE
+0012   080C           00041         movf counter, W
+0013   0782           00042         addwf PCL, F
+0014   3401 3402 3404 00043         dt b'00000001', b'00000010', b'00000100', b'00001000', b'00010000', b'00100000', b'01000000', b'
+                            10000000'
+       3408 3410 3420 
+       3440 3480 
+                      00044         ; dt 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80
+                      00045         ;DT             0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x67
+                      00046 
+001C                  00047 delay
+001C   30FF           00048         movlw .255
+001D   008D           00049         movwf val1
+001E                  00050 loop2
+001E   30FF           00051         movlw .255
+001F   008E           00052         movwf val2
+0020                  00053 loop3
+0020   0B8D           00054         decfsz val1,1
+0021   2820           00055         goto loop3
+0022   0B8E           00056         decfsz val2,1
+0023   281E           00057         goto loop2
+0024   0008           00058         return
+                      00059 
+Warning[205]: Found directive in column 1. (end)
+                      00060 end
+MPASM  5.51                           PC2.ASM   7-19-2023  17:54:29         PAGE  3
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+C                                 00000000
+DC                                00000001
+EEADR                             00000009
+EECON1                            00000088
+EECON2                            00000089
+EEDATA                            00000008
+EEIE                              00000006
+EEIF                              00000004
+F                                 00000001
+FSR                               00000004
+GIE                               00000007
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+NOT_PD                            00000003
+NOT_RBPU                          00000007
+NOT_TO                            00000004
+OPTION_REG                        00000081
+PCL                               00000002
+PCLATH                            0000000A
+PORTA                             00000005
+PORTB                             00000006
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+RA0                               00000000
+RA1                               00000001
+RA2                               00000002
+RA3                               00000003
+RA4                               00000004
+RB0                               00000000
+RB1                               00000001
+RB2                               00000002
+RB3                               00000003
+RB4                               00000004
+RB5                               00000005
+RB6                               00000006
+RB7                               00000007
+RBIE                              00000003
+RBIF                              00000000
+RD                                00000000
+RP0                               00000005
+RP1                               00000006
+STATUS                            00000003
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+TABLE                             00000012
+MPASM  5.51                           PC2.ASM   7-19-2023  17:54:29         PAGE  4
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TMR0                              00000001
+TMR0IE                            00000005
+TMR0IF                            00000002
+TRISA                             00000085
+TRISA0                            00000000
+TRISA1                            00000001
+TRISA2                            00000002
+TRISA3                            00000003
+TRISA4                            00000004
+TRISB                             00000086
+TRISB0                            00000000
+TRISB1                            00000001
+TRISB2                            00000002
+TRISB3                            00000003
+TRISB4                            00000004
+TRISB5                            00000005
+TRISB6                            00000006
+TRISB7                            00000007
+W                                 00000000
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+Z                                 00000002
+_CONFIG                           00002007
+_CP_OFF                           00003FFF
+_CP_ON                            0000000F
+_DEVID1                           00002006
+_FOSC_EXTRC                       00003FFF
+_FOSC_HS                          00003FFE
+_FOSC_LP                          00003FFC
+_FOSC_XT                          00003FFD
+_HS_OSC                           00003FFE
+_IDLOC0                           00002000
+_IDLOC1                           00002001
+_IDLOC2                           00002002
+_IDLOC3                           00002003
+_LP_OSC                           00003FFC
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+_WDTE_OFF                         00003FFB
+_WDTE_ON                          00003FFF
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_XT_OSC                           00003FFD
+__16F84A                          00000001
+counter                           0000000C
+delay                             0000001C
+loop                              0000000C
+loop2                             0000001E
+loop3                             00000020
+main                              00000009
+val1                              0000000D
+MPASM  5.51                           PC2.ASM   7-19-2023  17:54:29         PAGE  5
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+val2                              0000000E
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXX----------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:    37
+Program Memory Words Free:   987
+
+
+Errors   :     0
+Warnings :    15 reported,     0 suppressed
+Messages :     2 reported,     0 suppressed
+
+
